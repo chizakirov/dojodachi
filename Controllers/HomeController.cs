@@ -27,10 +27,10 @@ namespace dojodachi.Controllers
 
             int? fullness = HttpContext.Session.GetInt32("fullness");
             int? happiness = HttpContext.Session.GetInt32("happiness");
-            if(fullness == 0 || happiness == 0)
+            if(fullness <= 0 || happiness <= 0)
             {
                 TempData["dachiStatus"] = "over";
-                TempData["message"] = "Sad, your Dachi just passed away. Hit Reset to start over";
+                TempData["message"] = "Sadly, your Dachi just died. Hit Reset to start over";
             }
             else if(energy >= 100 && fullness >= 100 && happiness >= 100)
             {
@@ -55,7 +55,7 @@ namespace dojodachi.Controllers
                 int like = chance.Next(1, 5);
                 if (like == 1)
                 {
-                    TempData["message"] = "Your Dojodachi didn't like its meal";
+                    TempData["message"] = "Your dachi didn't like its meal";
                 }
                 else
                 {
@@ -63,7 +63,7 @@ namespace dojodachi.Controllers
                     int y = rand.Next(5, 11);
                     int? fullness = HttpContext.Session.GetInt32("fullness") + y;
                     HttpContext.Session.SetInt32("fullness", (int)fullness);
-                    TempData["message"] = $"You fed your Dojodachi. Its fullness increased by {y} points, and meals decreased by 1";
+                    TempData["message"] = $"You fed your dachi. Its fullness increased by {y} points, and meals decreased by 1";
                 }
             }
             else
@@ -85,7 +85,7 @@ namespace dojodachi.Controllers
                 int like = chance.Next(1, 5);
                 if (like == 1)
                 {
-                    TempData["message"] = "Your Dojodachi didn't like playing";
+                    TempData["message"] = "Your dachi didn't like playing";
                 }
                 else
                 {
@@ -93,12 +93,12 @@ namespace dojodachi.Controllers
                     int x = rand.Next(5, 11);
                     int? happiness = HttpContext.Session.GetInt32("happiness");
                     HttpContext.Session.SetInt32("happiness", (int)happiness + x);
-                    TempData["message"] = $"You played with your Dojodachi and increased its happiness by {x} but its energy decreased by 5 points";
+                    TempData["message"] = $"You played with your dachi and increased its happiness by {x} but its energy decreased by 5 points";
                 }
             }
             else
             {
-                TempData["message"] = "Your Dojodachi doesn't have enough energy to play";
+                TempData["message"] = "Your dachi doesn't have enough energy to play";
             }
             return RedirectToAction("Index");
         }
@@ -109,7 +109,7 @@ namespace dojodachi.Controllers
             int? energy = HttpContext.Session.GetInt32("energy");
             if(energy < 5)
             {
-                TempData["message"] = "Your Dojodachi doesn't have enough energy to work. It needs sleep to get refueled";
+                TempData["message"] = "Your dachi doesn't have enough energy to work. It needs sleep to get refueled";
             }
             else{
                 HttpContext.Session.SetInt32("energy", (int)energy -5);
@@ -117,7 +117,7 @@ namespace dojodachi.Controllers
                 int i = rand.Next(1,4);
                 int? meals = HttpContext.Session.GetInt32("meals");
                 HttpContext.Session.SetInt32("meals",(int)meals + i);
-                TempData["message"] = $"Your Dojodachi worked. It earned {i} meals and lost 5 energy points";
+                TempData["message"] = $"Your dachi worked. It earned {i} meals and lost 5 energy points";
             }
             return RedirectToAction("Index");
         }
@@ -125,13 +125,16 @@ namespace dojodachi.Controllers
         [HttpGet("sleep")]
         public IActionResult Sleep()
         {
-            int? energy = HttpContext.Session.GetInt32("energy");
-            HttpContext.Session.SetInt32("energy", (int)energy +15);
+            int? energy = HttpContext.Session.GetInt32("energy") +15;
+            HttpContext.Session.SetInt32("energy", (int)energy);
+
             int? fullness = HttpContext.Session.GetInt32("fullness") -5;
             HttpContext.Session.SetInt32("fullness", (int)fullness);
-            int? happiness = HttpContext.Session.GetInt32("happiness")-5;
+
+            int? happiness = HttpContext.Session.GetInt32("happiness") -5;
             HttpContext.Session.SetInt32("happiness", (int)happiness);
-            TempData["message"] = "Your Dojodachi slept. It gained 15 energy points, lost 5 fullness and 5 happiness points";
+
+            TempData["message"] = "Your dachi slept. It gained 15 energy points, lost 5 fullness and 5 happiness points";
             return RedirectToAction("Index");
         }
 

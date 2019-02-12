@@ -58,7 +58,7 @@ using dojodachi.Models;
             WriteLiteral("<!DOCTYPE html>\n<html lang=\"en\">\n");
             EndContext();
             BeginContext(33, 345, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f51e811bd4d0480dabfa25e3d27319f1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c02a9726446c45d3b4a8638ddfb9081b", async() => {
                 BeginContext(39, 332, true);
                 WriteLiteral(@"
     <meta charset=""UTF-8"">
@@ -90,7 +90,7 @@ using dojodachi.Models;
             WriteLiteral("\n");
             EndContext();
             BeginContext(379, 1023, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fc0d8ab8e2f14c08bfe86232d14b0ba3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "af5b57c306bc4393ae7c7564e487cd06", async() => {
                 BeginContext(385, 19, true);
                 WriteLiteral("\n    <h4>Fullness: ");
                 EndContext();
@@ -145,7 +145,7 @@ using dojodachi.Models;
                 WriteLiteral("</div><br>\n    \n    ");
                 EndContext();
                 BeginContext(608, 190, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "37a5849346db44c7a66d0ce1998ea983", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e2f3364d539243f8b4527b1a191830e2", async() => {
                     BeginContext(651, 140, true);
                     WriteLiteral("\n        <input type = \"hidden\" name = \"action\" value = \"feed\">\n        <button type = \"submit\" class = \"btn btn-primary\">Feed</button>\n    ");
                     EndContext();
@@ -170,7 +170,7 @@ using dojodachi.Models;
                 WriteLiteral("<br>\n    ");
                 EndContext();
                 BeginContext(807, 190, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "30baacd5685a40c69f7fa101a1f22393", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b098ce4dc1874ff6b342acb95005115d", async() => {
                     BeginContext(850, 140, true);
                     WriteLiteral("\n        <input type = \"hidden\" name = \"action\" value = \"play\">\n        <button type = \"submit\" class = \"btn btn-warning\">Play</button>\n    ");
                     EndContext();
@@ -195,7 +195,7 @@ using dojodachi.Models;
                 WriteLiteral("<br>\n    ");
                 EndContext();
                 BeginContext(1006, 187, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fb5eea26f5b44f9683d84614ff3b2a88", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef615a2bfe6d4603819df9a8e0d942a5", async() => {
                     BeginContext(1049, 137, true);
                     WriteLiteral("\n        <input type = \"hidden\" name = \"action\" value = \"work\">\n        <button type = \"submit\" class = \"btn btn-info\">Work</button>\n    ");
                     EndContext();
@@ -220,7 +220,7 @@ using dojodachi.Models;
                 WriteLiteral("<br>\n    ");
                 EndContext();
                 BeginContext(1202, 192, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b4debf936bd44f19fa53902ea92da3c", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6a0bc177619940df8065519c3db0f2b0", async() => {
                     BeginContext(1245, 142, true);
                     WriteLiteral("\n        <input type = \"hidden\" name = \"action\" value = \"sleep\">\n        <button type = \"submit\" class = \"btn btn-success\">Sleep</button>\n    ");
                     EndContext();
