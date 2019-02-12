@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Dojodachi</title>
+    <style>
+        .msgbox{
+            height: 300px;
+            width: 500px;
+            border: 1px dotted black;
+        }
+        p{
+            color: purple;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        $(document).ready(() => {
+            $("#feed").on("click", () => {
+                $("#cateat").slideDown().delay(300).slideUp();
+            })
+        })
+    </script>
+</head>
+<body>
+    @{
+        <h3 class = "text-primary">
+            Happiness: @ViewBag.happiness 
+            | Fullness: @ViewBag.fullness  
+            | Energy: @ViewBag.energy  
+            | Meals: @ViewBag.meals</h3>
+        <div class ="msgbox">
+            <p>@TempData["message"]</p>
+            <div id = "dachipic">
+                <img src = "./wwwroot/images/play.jpg" alt = "dachi plays" id = "catplay">
+                <img src = "~/images/work.jpeg" alt = "dachi works" id = "catwork">
+                <img src = "~/images/eat.jpg" alt = "dachi eats" id = "cateat">
+                <img src = "~/images/sleep.jpg" alt = "dachi sleeps" id = "catsleep"> 
+            </div>
+        </div>
+    }
+    <br>
+    @{
+        if(TempData["dachiStatus"] == "playing")
+        {
+            <a href="/feed"><button class = "btn btn-primary" id = "feed">Feed</button></a>
+            <a href="/play"><button class = "btn btn-warning" id = "play">Play</button></a>
+            <a href="/work"><button class = "btn btn-info" id = "work">Work</button></a>
+            <a href="/sleep"><button class = "btn btn-success" id = "sleep">Sleep</button></a>
+        }
+        else if(TempData["dachiStatus"] == "over")
+        {
+            <a href="/reset"><button id = "reset">Reset</button></a>
+        }
+    }
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojodachi</title>
+    <style>
+        .msgbox{
+            height: 300px;
+            width: 500px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h4>Fullness: @ViewBag.fullness</h4>
+    <h4>Happiness: @ViewBag.happiness</h4>
+    <h4>Energy: @ViewBag.energy</h4>
+    <h4>Meals: @ViewBag.meals</h4>
+    <div class = "msgbox">@TempData["message"]</div><br>
+    
+    <form method = "post" action = "dojodachi">
+        <input type = "hidden" name = "action" value = "feed">
+        <button type = "submit" class = "btn btn-primary">Feed</button>
+    </form><br>
+    <form method = "post" action = "dojodachi">
+        <input type = "hidden" name = "action" value = "play">
+        <button type = "submit" class = "btn btn-warning">Play</button>
+    </form><br>
+    <form method = "post" action = "dojodachi">
+        <input type = "hidden" name = "action" value = "work">
+        <button type = "submit" class = "btn btn-info">Work</button>
+    </form><br>
+    <form method = "post" action = "dojodachi">
+        <input type = "hidden" name = "action" value = "sleep">
+        <button type = "submit" class = "btn btn-success">Sleep</button>
+    </form>
+</body>
+</html>
